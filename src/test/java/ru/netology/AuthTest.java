@@ -38,6 +38,7 @@ class AuthTest {
     void shouldFailWithInvalidLogin() {
         RegistrationInfo dataOrderCard= DataGenerator.Registration.generateActiveUser();
         DataGenerator.SendOnServer.setUpAll(dataOrderCard);
+
         $("[name=login]").setValue("12345");
         $("[name=password]").setValue(dataOrderCard.getPassword());
         $("[data-test-id=action-login]").click();
